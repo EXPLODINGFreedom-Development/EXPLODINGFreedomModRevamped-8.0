@@ -1,0 +1,8 @@
+name: EXPLODINGFreedomModRevamped
+main: me.StevenLawson.TotalFreedomMod.TotalFreedomMod
+version: 8.0-Pre-Release.1
+description: Plugin for the EXPLODINGFreedom server.
+softdepend: [BukkitTelnet, WorldEdit, Essentials, BarAPI]
+authors: [Madgeek1450, Prozza, Easter_Elf, Alco_Rs11]
+
+# plugin.yml is no longer used to define commands.
