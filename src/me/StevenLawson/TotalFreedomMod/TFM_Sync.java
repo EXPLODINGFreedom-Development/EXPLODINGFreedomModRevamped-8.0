@@ -49,6 +49,32 @@ public class TFM_Sync
 
         }.runTask(TotalFreedomMod.plugin);
     }
+     public static void seniorChatMessage(final CommandSender sender, final String message, final boolean isRed)
+    {
+        new BukkitRunnable()
+        {
+
+            @Override
+            public void run()
+            {
+                TFM_Util.seniorChatMessage(sender, message, isRed);
+            }
+
+        }.runTask(TotalFreedomMod.plugin);
+    }
+     public static void telnetChatMessage(final CommandSender sender, final String message, final boolean isRed)
+    {
+        new BukkitRunnable()
+        {
+
+            @Override
+            public void run()
+            {
+                TFM_Util.telnetChatMessage(sender, message, isRed);
+            }
+
+        }.runTask(TotalFreedomMod.plugin);
+    }
 
     public static void autoEject(final Player player, final String kickMessage)
     {

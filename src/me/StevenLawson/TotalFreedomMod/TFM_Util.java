@@ -963,6 +963,84 @@ public class TFM_Util
             }
         }
     }
+    public static void telnetChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[STA] " + name + ": " + message);
+
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isTelnetAdmin(player))
+            {
+                player.sendMessage("[" + ChatColor.DARK_GREEN + "TELNET-ADMIN" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.GREEN + message);
+            }
+        }
+    }
+    public static void ExecutiveChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[Executive] " + name + ": " + message);
+
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isSeniorAdmin(player))
+            {
+                player.sendMessage("[" + ChatColor.BLUE + "EXECUTIVE" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.GOLD + message);
+            }
+        }
+    }
+    public static void SpecialExecutiveChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[Special-Executive] " + name + ": " + message);
+
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isSeniorAdmin(player))
+            {
+                player.sendMessage("[" + ChatColor.GREEN + "SPECIAL-EXECUTIVE" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.GOLD + message);
+            }
+        }
+    }
+    public static void OwnerChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[System-Owner] " + name + ": " + message);
+
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isSeniorAdmin(player))
+            {
+                player.sendMessage("[" + ChatColor.DARK_RED + "OWNER" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.DARK_AQUA + message);
+            }
+        }
+    }
+    public static void SystemAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[System-Admin] " + name + ": " + message);
+
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isSeniorAdmin(player))
+            {
+                player.sendMessage("[" + ChatColor.DARK_RED + "SYSTEM-ADMIN" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.DARK_AQUA + message);
+            }
+        }
+    }
+    public static void seniorChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[Senior-Admin] " + name + ": " + message);
+
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isSeniorAdmin(player))
+            {
+                player.sendMessage("[" + ChatColor.GOLD + "SENIOR-ADMIN" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.YELLOW + message);
+            }
+        }
+    }
 
     //getField: Borrowed from WorldEdit
     @SuppressWarnings("unchecked")
@@ -1138,85 +1216,7 @@ public class TFM_Util
         TFM_PlayerData.getPlayerData(player).setGod(enabled);
     }
     
-    public static void TelnetChatMessage(CommandSender sender, String message, boolean senderIsConsole)
-    {
-        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
-        TFM_Log.info("[STA] " + name + ": " + message);
-
-        for (Player player : Bukkit.getOnlinePlayers())
-        {
-            if (TFM_AdminList.isSuperAdmin(player))
-            {
-                player.sendMessage("[" + ChatColor.DARK_GREEN + "TELNET-ADMIN" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.GREEN + message);
-            }
-        }
-    }
-    public static void ExecutiveChatMessage(CommandSender sender, String message, boolean senderIsConsole)
-    {
-        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
-        TFM_Log.info("[Executive] " + name + ": " + message);
-
-        for (Player player : Bukkit.getOnlinePlayers())
-        {
-            if (TFM_AdminList.isSeniorAdmin(player))
-            {
-                player.sendMessage("[" + ChatColor.BLUE + "EXECUTIVE" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.GOLD + message);
-            }
-        }
-    }
-    public static void SpecialExecutiveChatMessage(CommandSender sender, String message, boolean senderIsConsole)
-    {
-        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
-        TFM_Log.info("[Special-Executive] " + name + ": " + message);
-
-        for (Player player : Bukkit.getOnlinePlayers())
-        {
-            if (TFM_AdminList.isSeniorAdmin(player))
-            {
-                player.sendMessage("[" + ChatColor.GREEN + "SPECIAL-EXECUTIVE" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.GOLD + message);
-            }
-        }
-    }
-    public static void OwnerChatMessage(CommandSender sender, String message, boolean senderIsConsole)
-    {
-        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
-        TFM_Log.info("[System-Owner] " + name + ": " + message);
-
-        for (Player player : Bukkit.getOnlinePlayers())
-        {
-            if (TFM_AdminList.isSeniorAdmin(player))
-            {
-                player.sendMessage("[" + ChatColor.DARK_RED + "OWNER" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.DARK_AQUA + message);
-            }
-        }
-    }
-    public static void SystemAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
-    {
-        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
-        TFM_Log.info("[System-Admin] " + name + ": " + message);
-
-        for (Player player : Bukkit.getOnlinePlayers())
-        {
-            if (TFM_AdminList.isSeniorAdmin(player))
-            {
-                player.sendMessage("[" + ChatColor.DARK_RED + "SYSTEM-ADMIN" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.DARK_AQUA + message);
-            }
-        }
-    }
-    public static void SeniorAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
-    {
-        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
-        TFM_Log.info("[Senior-Admin] " + name + ": " + message);
-
-        for (Player player : Bukkit.getOnlinePlayers())
-        {
-            if (TFM_AdminList.isSeniorAdmin(player))
-            {
-                player.sendMessage("[" + ChatColor.GOLD + "SENIOR-ADMIN" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.YELLOW + message);
-            }
-        }
-    }
-    
+       
     public static boolean isDoubleJumper(Player player)
     {
         return TFM_PlayerData.getPlayerData(player).isDoubleJumper();

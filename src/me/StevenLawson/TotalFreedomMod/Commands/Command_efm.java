@@ -62,7 +62,7 @@ public class Command_efm extends TFM_Command
         }
 
        TFM_Util.playerMsg(sender_p, " §c§lEXPLODINGFreedomModRevamped:", ChatColor.GOLD);
-        TFM_Util.playerMsg(sender_p, "EFM:R - The Feature-Packed New Form of All-OP Server Management By§a " + TFM_ConfigEntry.SERVER_COMPILED_BY.getString() + ChatColor.GREEN);
+        TFM_Util.playerMsg(sender_p, "EFM:R - The Feature-Packed New Form of All-OP Server Management By§a Alco_Rs11, Easter_Elf ", ChatColor.GRAY);
         TFM_Util.playerMsg(sender_p, "§5Made in the image of the §9TotalFreedomMod §5but with more §6features §5and §eflexibility.", ChatColor.GOLD);
         TFM_Util.playerMsg(sender_p, "§9This plugin is version §a8.0 PRE-1", ChatColor.GOLD);
         

@@ -33,7 +33,7 @@ public class Command_p extends TFM_Command
         }
         else
         {
-            TFM_Util.SeniorAdminChatMessage(sender, org.apache.commons.lang3.StringUtils.join(args, " "), senderIsConsole);
+            TFM_Util.seniorChatMessage(sender, org.apache.commons.lang3.StringUtils.join(args, " "), senderIsConsole);
         }
 
         return true;

@@ -31,7 +31,7 @@ public class Command_telnetchat extends TFM_Command
         }
         else
         {
-            TFM_Util.TelnetChatMessage(sender, StringUtils.join(args, " "), senderIsConsole);
+            TFM_Util.telnetChatMessage(sender, StringUtils.join(args, " "), senderIsConsole);
         }
 
         return true;

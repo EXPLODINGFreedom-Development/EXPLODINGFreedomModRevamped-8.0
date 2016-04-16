@@ -711,12 +711,12 @@ public class TFM_PlayerListener implements Listener
                 return;
             }
             if (playerdata.inTelnetAdminChat()) {
-               TFM_Util.TelnetChatMessage(player, message, false);
+                TFM_Sync.telnetChatMessage(player, message, false);
                 event.setCancelled(true);
                 return;
             }
             if (playerdata.inSeniorAdminChat()) {
-                TFM_Util.SeniorAdminChatMessage(player, message, false);
+                 TFM_Sync.seniorChatMessage(player, message, false);
                 event.setCancelled(true);
                 return;
             }            
