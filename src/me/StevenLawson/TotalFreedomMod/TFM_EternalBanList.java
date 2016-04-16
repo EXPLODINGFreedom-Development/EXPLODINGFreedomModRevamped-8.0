@@ -2,7 +2,7 @@ package me.StevenLawson.TotalFreedomMod;
 
 import java.util.Arrays;
 import java.util.List;
-
+//This file is for unappealable permanent bans. These are only modified by downloading the source code and compiling the plugin yourself.
 public class TFM_EternalBanList
 {
   public static final List<String> HARDCODE = Arrays.asList(new String[] { "RayGamingThe2nd"});
