@@ -1,16 +1,15 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
-import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
+import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import org.apache.commons.lang.StringUtils;
-import org.bukkit.ChatColor;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.TELNET, source = SourceType.BOTH)
 @CommandParameters(
-        description = "Senior AdminChat - Talk privately with other senior admins.",
+        description = "TelnetChat - Talk privately with other telnet admins. Using <command> itself will toggle TelnetChat on and off for all messages.",
         usage = "/<command> [message...]",
         aliases = "tc")
 public class Command_telnetchat extends TFM_Command
@@ -18,19 +17,23 @@ public class Command_telnetchat extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        if (!TFM_AdminList.isTelnetAdmin(sender))
-        {
-            TFM_Util.playerMsg(sender, "You do not have permission to access the Telnet Admin Chat.", ChatColor.RED);
-            return true;
-        }
         if (args.length == 0)
         {
-            return false;
+            if (senderIsConsole)
+            {
+                playerMsg("Only in-game players can toggle TelnetChat.");
+                return true;
+            }
+
+            TFM_PlayerData userinfo = TFM_PlayerData.getPlayerData(sender_p);
+            userinfo.setAdminChat(!userinfo.inAdminChat());
+            playerMsg("Toggled Telnet Chat " + (userinfo.inAdminChat() ? "on" : "off") + ".");
         }
         else
         {
-            TFM_Util.TelnetChatMessage(sender, org.apache.commons.lang.StringUtils.join(args, " "), senderIsConsole);
+            TFM_Util.TelnetChatMessage(sender, StringUtils.join(args, " "), senderIsConsole);
         }
+
         return true;
     }
 }

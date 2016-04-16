@@ -15,7 +15,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import static sun.audio.AudioPlayer.player;
 
-@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
+@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
 @CommandParameters(description = "System Administration Management", usage = "/<command> [saadd | sadelete] <username> [kick] [gtfo] <<username>> <<reason>>]", aliases = "system")
 public class Command_sys extends TFM_Command
 {

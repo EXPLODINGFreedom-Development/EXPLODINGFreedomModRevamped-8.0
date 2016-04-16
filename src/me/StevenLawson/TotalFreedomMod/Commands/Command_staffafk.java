@@ -19,12 +19,12 @@ public class Command_staffafk extends TFM_Command
         {
         if (args[0].equals("on"))
         {
-        TFM_Util.adminAction(ChatColor.RED + sender.getName(), "I'm currently afk, please conatact another admin.", false);
+        TFM_Util.adminAction(ChatColor.RED + sender.getName(), "I'm currently afk, please contact another admin.", false);
         return true;
         }
         else if (args[0].equals("off"))
         {
-      TFM_Util.adminAction(ChatColor.AQUA + sender.getName(), "I'm not afk anymore, you can conatact me now! =3", false);
+      TFM_Util.adminAction(ChatColor.AQUA + sender.getName(), "I'm not afk anymore, you can contact me now!", false);
       return true;
         }
         }

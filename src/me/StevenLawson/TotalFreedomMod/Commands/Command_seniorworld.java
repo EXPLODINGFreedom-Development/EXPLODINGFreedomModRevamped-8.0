@@ -2,7 +2,6 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
 import me.StevenLawson.TotalFreedomMod.World.TFM_SeniorWorld;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -10,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
-@CommandParameters(description = "Go to the AdminWorld.", usage = "/<command> [guest < list | purge | add <player> | remove <player> > | time <morning | noon | evening | night> | weather <off | on | storm>]")
+@CommandParameters(description = "Go to the SeniorAdminWorld.", usage = "/<command> [guest < list | purge | add <player> | remove <player> > | time <morning | noon | evening | night> | weather <off | on | storm>]")
 public class Command_seniorworld extends TFM_Command
 {
     private enum CommandMode
@@ -82,7 +81,7 @@ public class Command_seniorworld extends TFM_Command
                         }
                         else
                         {
-                            playerMsg("You don't have permission to access the AdminWorld.");
+                            playerMsg("You don't have permission to access the SeniorWorld.");
                         }
                     }
 
@@ -99,7 +98,7 @@ public class Command_seniorworld extends TFM_Command
                         else if ("purge".equalsIgnoreCase(args[1]))
                         {
                             assertCommandPerms(sender, sender_p);
-                            TFM_AdminWorld.getInstance().purgeGuestList();
+                            TFM_SeniorWorld.getInstance().purgeGuestList();
                             TFM_Util.adminAction(sender.getName(), "SeniorWorld guest list purged.", false);
                         }
                         else
@@ -123,7 +122,7 @@ public class Command_seniorworld extends TFM_Command
 
                             if (TFM_SeniorWorld.getInstance().addGuest(player, sender_p))
                             {
-                                TFM_Util.adminAction(sender.getName(), "AdminWorld guest added: " + player.getName(), false);
+                                TFM_Util.adminAction(sender.getName(), "SeniorWorld guest added: " + player.getName(), false);
                             }
                             else
                             {
@@ -135,7 +134,7 @@ public class Command_seniorworld extends TFM_Command
                             final Player player = TFM_SeniorWorld.getInstance().removeGuest(args[2]);
                             if (player != null)
                             {
-                                TFM_Util.adminAction(sender.getName(), "AdminWorld guest removed: " + player.getName(), false);
+                                TFM_Util.adminAction(sender.getName(), "SeniorWorld guest removed: " + player.getName(), false);
                             }
                             else
                             {
@@ -160,7 +159,7 @@ public class Command_seniorworld extends TFM_Command
                         if (timeOfDay != null)
                         {
                             TFM_SeniorWorld.getInstance().setTimeOfDay(timeOfDay);
-                            playerMsg("AdminWorld time set to: " + timeOfDay.name());
+                            playerMsg("SeniorWorld time set to: " + timeOfDay.name());
                         }
                         else
                         {

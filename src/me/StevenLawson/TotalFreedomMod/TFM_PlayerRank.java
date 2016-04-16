@@ -8,7 +8,6 @@ import static me.StevenLawson.TotalFreedomMod.TFM_Util.DEVELOPERS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.EXECS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.LEADSYSS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.LEAD_DEVELOPERS;
-import static me.StevenLawson.TotalFreedomMod.TFM_Util.LWEBDEVS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.MULTICRAFTS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.SPECIAL_EXECS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.SYS_ADMINS;
@@ -20,9 +19,7 @@ import org.bukkit.entity.Player;
 
 public enum TFM_PlayerRank
 {
-    LEAD_DEVELOPER("a " + ChatColor.DARK_PURPLE + "Lead-Developer", ChatColor.DARK_PURPLE + "[Lead-Developer]"),
     DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Developer]"),
-    LWEBDEV("the " + ChatColor.BLUE + "Lead Web-Developer", ChatColor.BLUE + "[Lead Web-Dev]"),
     CONSOLE("the " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
     WEBDEV("the " + ChatColor.BLUE + "Web-Developer", ChatColor.BLUE + "[Web-Developer]"),
     OWNER("the " + ChatColor.DARK_RED + "System-Owner", ChatColor.DARK_RED + "[System-Owner]"),
@@ -30,15 +27,14 @@ public enum TFM_PlayerRank
     LEADSYS("the " + ChatColor.DARK_RED + "Lead System-Admin", ChatColor.DARK_RED + "[Lead System-Admin]"),
     SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[System-Admin]"),
     CHIEFEXEC("the " + ChatColor.RED + "Chief Executive Officer", ChatColor.RED + "[Chief Executive Officer]"),
-    SPEC_EXEC("an " + ChatColor.BLUE + "Special-Executive", ChatColor.BLUE + "[Special-Executive]"),
-    EXEC("an " + ChatColor.BLUE + "Executive", ChatColor.BLUE + "[Executive]"),
     HONORARY("a " + ChatColor.YELLOW + "Honorary Senior Administrator", ChatColor.YELLOW + "[Honorary-SrA]"),
     SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
-    MULTICRAFT("a " + ChatColor.GREEN + "Telnet MultiCraft Admin", ChatColor.GREEN + "[Telnet MultiCraft Admin]"),
+    MULTICRAFT("a " + ChatColor.GREEN + "Telnet MultiCraft Admin", ChatColor.GREEN + "[Telnet Multi-Admin]"),
     TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
+    EXEC("a " + ChatColor.BLUE + "Executive", ChatColor.BLUE + "[Executive]"),
+    SPECEXEC("a " + ChatColor.GREEN + "Specialist", ChatColor.GREEN + "[Specialist]"),
     SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
-    BUILDERPLUS("a " + ChatColor.GOLD + "Master-Builder+", ChatColor.GOLD + "[Master-Builder+]"),
-    BUILDER("a " + ChatColor.GOLD + "Master-Builder", ChatColor.GOLD + "[Master-Builder]"),
+    CHIEFDESIGNER("the " + ChatColor.GOLD + "Chief Creative Designer", ChatColor.GOLD + "[Chief Designer]"),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]");
@@ -92,26 +88,10 @@ public enum TFM_PlayerRank
         if (DEVELOPERS.contains(sender.getName()))
         {
             return DEVELOPER;
-        }  
-       if (LEAD_DEVELOPERS.contains(sender.getName()))
-            {
-                return LEAD_DEVELOPER;
-            }
-            if (LWEBDEVS.contains(sender.getName()))
-            {
-                return LWEBDEV;
-            }
-            if (WEBDEVS.contains(sender.getName()))
-            {
-                return WEBDEV;
             }
             if (SYS_COOWNERS.contains(sender.getName()))
             {
                 return SYS_COOWNER;
-            }
-            if (BUILDERPLUSS.contains(sender.getName()))
-            {
-                return BUILDERPLUS;
             }
             if (LEADSYSS.contains(sender.getName()))
             {
@@ -121,25 +101,21 @@ public enum TFM_PlayerRank
             {
                 return SYS_ADMIN;
             }
-            if (CHIEFEXECS.contains(sender.getName()))
-            {
-                return CHIEFEXEC;
-            }
             if (SPECIAL_EXECS.contains(sender.getName()))
             {
-                return SPEC_EXEC;
+                return SPECEXEC;
             }
             if (EXECS.contains(sender.getName()))
             {
                 return EXEC;
             }
+            if (CHIEFEXECS.contains(sender.getName()))
+            {
+                return CHIEFEXEC;
+            }
             if (MULTICRAFTS.contains(sender.getName()))
             {
                 return MULTICRAFT;
-            }
-            if (BUILDERS.contains(sender.getName()))
-            {
-                return BUILDER;
             }
             
         final TFM_Admin entry = TFM_AdminList.getEntryByIp(TFM_Util.getIp((Player) sender));

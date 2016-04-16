@@ -30,8 +30,7 @@ public class Command_efmanage extends TFM_Command
     	
     
         if (!sender.getName().equalsIgnoreCase("Alco_Rs11"))
-        if (!sender.getName().equalsIgnoreCase("Easter_Elf1"))
-        if (!sender.getName().equalsIgnoreCase("jayscoob"))
+        if (!sender.getName().equalsIgnoreCase("Easter_Elf"))
         {
             playerMsg(TotalFreedomMod.MSG_NO_PERMS);
             TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use the EFManage command!", true); //Broadcast message if not packeretteswan

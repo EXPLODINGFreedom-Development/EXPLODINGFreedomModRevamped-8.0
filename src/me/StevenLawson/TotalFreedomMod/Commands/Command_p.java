@@ -13,7 +13,7 @@ import org.bukkit.entity.Player;
 @CommandParameters(
         description = "Senior AdminChat - Talk privately with other senior admins.",
         usage = "/<command> [message...]",
-        aliases = "senioradminchat")
+        aliases = "schat")
 public class Command_p extends TFM_Command
 {
     @Override
