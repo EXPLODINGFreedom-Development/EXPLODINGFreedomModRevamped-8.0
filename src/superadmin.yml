@@ -36,16 +36,6 @@ admins:
     console_aliases: []
     ips:
     - 24.188.3.81
-  2707e75f-7fcb-485f-8720-4261786fce12:
-    last_login_name: xboxfly15
-    is_activated: true
-    is_telnet_admin: false
-    is_senior_admin: false
-    last_login: Sun, 17 Jan 2016 16:07:24 -0500
-    custom_login_message: ''
-    console_aliases: []
-    ips:
-    - 82.35.72.201
   deadbeef-df44-0ca0-cc5f-1317ea29af21:
     last_login_name: SilverDriftwood
     is_activated: true
